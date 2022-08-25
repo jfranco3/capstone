@@ -1,10 +1,13 @@
-import react from "react";
+import React from "react";
+import NavBar from "./components/NavBar";
+import Router from "./Router";
 import "./App.css";
 
 export default function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
+    <div>
+      <NavBar />
+      <Router />
     </div>
   );
 }
