@@ -1,36 +1,65 @@
-import React from "react";
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { TextField, Button, Container } from "@mui/material";
 
-export default function LogIn() {
+import { auth } from "../firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+const Login = () => {
+  const navigate = useNavigate();
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const login = (e) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+    navigate("/signup");
+  };
+
   return (
-    <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}
-      className="textfield"
-    >
-      <Stack spacing={2}>
-        <TextField
-          className="textfield-child"
-          label="Required"
-          defaultValue="Email"
-          required
-        />
-        <TextField
-          className="textfield-child"
-          label="Required"
-          defaultValue="Password"
-          required
-        />
-        <Button
-          to="/LogIn"
-          className="login-button"
-          variant="contained"
-          color="success"
-        >
-          LOG IN
-        </Button>
-      </Stack>
+    <div className="App">
+      <Container maxWidth="sm">
+        <form className="login-form" onSubmit={login}>
+          <TextField
+            required
+            onChange={(event) => {
+              setLoginEmail(event.target.value);
+            }}
+            value={loginEmail}
+            name="Email"
+            label="Email"
+            type="text"
+          />
+          <TextField
+            required
+            onChange={(event) => {
+              setLoginPassword(event.target.value);
+            }}
+            value={loginPassword}
+            name="password"
+            label="Password"
+            type="password"
+          />
+          <Button
+            type="submit"
+            className="login-button"
+            variant="contained"
+            color="primary"
+          >
+            Log In
+          </Button>
+        </form>
+      </Container>
     </div>
   );
-}
+};
+
+export default Login;

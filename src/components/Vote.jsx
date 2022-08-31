@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import RestaurantCard from "./RestaurantCard";
 
 export default function Vote() {
   return (
     <div>
-      <Link to="/vote"> Vote</Link>
+      <RestaurantCard />
     </div>
   );
 }
+
+//NEEDS:
+//SESSION ID AND YELP ID OF EACH RANDOM RESTAURANT

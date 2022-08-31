@@ -15,7 +15,7 @@ export default function Login() {
           to="/signup"
           className="signin-button"
           variant="contained"
-          color="success"
+          color="secondary"
         >
           SIGN UP
         </Button>
@@ -25,7 +25,7 @@ export default function Login() {
           to="/login"
           className="login-button"
           variant="contained"
-          color="success"
+          color="secondary"
         >
           LOG IN
         </Button>

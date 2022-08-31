@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(184, 180, 189);
 }
 
 .App {
@@ -35,6 +36,14 @@ ul {
 
 .text-gray {
   color: gray;
+}
+
+.signUp-form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 50%;
+  gap: 15px;
 }
 
 .login-form {
