@@ -7,16 +7,16 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { createRole } from "../Utils/utilityFunctions";
 import { setDoc, doc } from "firebase/firestore";
 
-const SignUp = (props) => {
+const SignUp = () => {
   const navigate = useNavigate();
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [userRole, setUserRole] = useState(null);
 
-  const createLikedCarsCollection = async (user) => {
-    await setDoc(doc(db, "userLikedRestaurants", user.user.email), {
+  const createLikedRestaurantsCollection = async (user) => {
+    await setDoc(doc(db, "LikedRestaurantsCollection", user.user.email), {
       userId: user.user.uid,
-      likedRestaurantIds: [],
+      likedRestaurantsIds: [],
     });
   };
 
@@ -30,9 +30,9 @@ const SignUp = (props) => {
       );
 
       createRole(userCredential, userRole);
-      createLikedCarsCollection(userCredential);
+      createLikedRestaurantsCollection(userCredential);
       console.log("userCredential.user:from SignUP.js", userCredential.user);
-      navigate("/");
+      navigate("/createsession");
     } catch (error) {
       console.log(error.message);
     }

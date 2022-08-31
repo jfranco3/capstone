@@ -18,10 +18,9 @@ const Login = () => {
         const user = userCredential.user;
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.error("ERROR LOGGING IN", error);
       });
-    navigate("/signup");
+    navigate("/createsession");
   };
 
   return (

@@ -25,7 +25,7 @@ export default function createSession() {
           label="Who's eating today?"
         />
       </Stack>
-      <Button variant="contained" color="secondary">
+      <Button variant="contained" color="primary">
         Submit
       </Button>
     </div>
