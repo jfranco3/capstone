@@ -16,11 +16,12 @@ const Login = () => {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
         const user = userCredential.user;
+        navigate("/createsession");
       })
       .catch((error) => {
         console.error("ERROR LOGGING IN", error);
+        alert("Invalid Email or Password. Please Try Again!");
       });
-    navigate("/createsession");
   };
 
   return (
