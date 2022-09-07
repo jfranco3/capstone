@@ -8,7 +8,7 @@ export default function NavBar() {
   const navigate = useNavigate();
   return (
     <AppBar position="relative">
-      <Toolbar>
+      <Toolbar sx={{ bgcolor: "#2E3B55" }}>
         <IconButton color="inherit"></IconButton>
         <Typography variant="h6" style={{ flexGrow: "1" }}>
           FOOD-PAIR

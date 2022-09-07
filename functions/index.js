@@ -1,4 +1,6 @@
 const functions = require("firebase-functions");
+const axios = require("axios").default;
+
 const admin = require("firebase-admin");
 admin.initializeApp();
 
@@ -13,8 +15,8 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 exports.addAdminRole = functions.https.onCall(async (data, context) => {
   try {
     const roles = {
-      user1: false,
-      allUsers: false,
+      teacher: false,
+      student: false,
     };
     roles[data.role] = true;
     // Tell our database to use data from our front-end to
@@ -33,35 +35,34 @@ exports.addAdminRole = functions.https.onCall(async (data, context) => {
   }
 });
 
-exports.testYelpAPI = functions.https.onCall(async () => {
-  try {
-    var url =
-      "https://api.yelp.com/v3/businesses/north-india-restaurant-san-francisco";
-    var bearer =
-      "Bearer " +
-      "sPU_FE4tC6e41h7PLR7JSV7iozl2NWs1BvJ4X-kvd2rkY-7_CBu9_OW1oDpsAzZ0IikzpkPlqp2RY3ng3oAu7JubwDfrOunjC3_v20XYEg4IbtY2GitbdmzIdB8FY3Yx";
+// exports.testYelpAPI = functions.https.onCall(async () => {
+//   try {
+//     var url = "https://api.yelp.com/v3/businesses/{id}";
+//     var bearer =
+//       "Bearer " +
+//       "sPU_FE4tC6e41h7PLR7JSV7iozl2NWs1BvJ4X-kvd2rkY-7_CBu9_OW1oDpsAzZ0IikzpkPlqp2RY3ng3oAu7JubwDfrOunjC3_v20XYEg4IbtY2GitbdmzIdB8FY3Yx";
 
-    const yelpData = await axios.get(url, {
-      // method: "GET",
-      // withCredentials: true,
-      // credentials: "include",
-      headers: {
-        Authorization: bearer,
-        // "Content-Type": "application/json",
-      },
-    });
-    // const data = await yelpData.json();
-    // console.log("DATA", data);
-    // console.log("yelpData", yelpData.data);
+//     const yelpData = await axios.get(url, {
+//       // method: "GET",
+//       // withCredentials: true,
+//       // credentials: "include",
+//       headers: {
+//         Authorization: bearer,
+//         // "Content-Type": "application/json",
+//       },
+//     });
+//     // const data = await yelpData.json();
+//     // console.log("DATA", data);
+//     // console.log("yelpData", yelpData.data);
 
-    const response1 = "successs";
-    // const response2 = JSON.stringify(yelpData);
-    // console.log(response2);
-    const response3 = JSON.stringify(yelpData.data);
-    console.log(response3);
+//     const response1 = "successs";
+//     // const response2 = JSON.stringify(yelpData);
+//     // console.log(response2);
+//     const response3 = JSON.stringify(yelpData.data);
+//     console.log(response3);
 
-    return { result: response3 };
-  } catch (error) {
-    console.log(error);
-  }
-});
+//     return { result: response3 };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
