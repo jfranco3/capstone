@@ -14,7 +14,7 @@ function Vote() {
 
   return (
     //     <div>
-
+    //map through api to return pertinent info about each restaurant
     <RestaurantCard />
 
     //     </div>
