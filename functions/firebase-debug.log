@@ -177,3 +177,159 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2022-09-07T18:43:11.628Z] [worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: IDLE"}}
 [debug] [2022-09-07T18:43:11.629Z] [work-queue] {"queueLength":0,"workRunningCount":0}
 [debug] [2022-09-07T19:25:46.815Z] File C:\devFolder\React\capstone\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\devFolder\\React\\capstone\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-09-07T19:25:47.825Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-09-07T19:25:50.817Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-07T19:25:50.818Z] Building nodejs source
+[debug] [2022-09-07T19:25:50.818Z] Analyzing nodejs backend spec
+[debug] [2022-09-07T19:25:50.818Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-07T19:25:51.162Z] Serving at port 9005
+
+[debug] [2022-09-07T19:25:51.276Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"},"addAdminRole":{"platform":"gcfv1","labels":{},"callableTrigger":{},"entryPoint":"addAdminRole"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-07T19:25:51.284Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: helloWorld, addAdminRole. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld, addAdminRole."}}
+[debug] [2022-09-07T19:25:51.303Z] [worker-pool] Shutting down IDLE worker (us-central1-addAdminRole) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-addAdminRole)"}}
+[debug] [2022-09-07T19:25:51.303Z] [worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: FINISHING"}}
+[debug] [2022-09-07T19:25:51.315Z] [worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: exited"}}
+[debug] [2022-09-07T19:25:51.315Z] [worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addAdminRole-db6bbe8c-bfea-435d-9381-bee361f3b340]: FINISHED"}}
+[debug] [2022-09-07T19:36:31.342Z] File C:\devFolder\React\capstone\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\devFolder\\React\\capstone\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-09-07T19:36:32.353Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-09-07T19:36:35.509Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-07T19:36:35.510Z] Building nodejs source
+[debug] [2022-09-07T19:36:35.510Z] Analyzing nodejs backend spec
+[debug] [2022-09-07T19:36:35.511Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-07T19:36:35.792Z] Serving at port 9005
+
+[debug] [2022-09-07T19:36:36.025Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"},"addAdminRole":{"platform":"gcfv1","labels":{},"callableTrigger":{},"entryPoint":"addAdminRole"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-07T19:36:36.034Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: helloWorld, addAdminRole. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld, addAdminRole."}}
+[debug] [2022-09-07T19:37:11.470Z] File C:\devFolder\React\capstone\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\devFolder\\React\\capstone\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-09-07T19:37:12.479Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-09-07T19:37:15.294Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-07T19:37:15.294Z] Building nodejs source
+[debug] [2022-09-07T19:37:15.294Z] Analyzing nodejs backend spec
+[debug] [2022-09-07T19:37:15.295Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-07T19:37:15.492Z] Serving at port 9005
+
+[debug] [2022-09-07T19:37:15.587Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"},"addAdminRole":{"platform":"gcfv1","labels":{},"callableTrigger":{},"entryPoint":"addAdminRole"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-07T19:37:15.594Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: helloWorld, addAdminRole. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld, addAdminRole."}}
+[debug] [2022-09-07T19:40:11.024Z] File C:\devFolder\React\capstone\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\devFolder\\React\\capstone\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-09-07T19:40:12.038Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-09-07T19:40:15.436Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-07T19:40:15.437Z] Building nodejs source
+[debug] [2022-09-07T19:40:15.437Z] Analyzing nodejs backend spec
+[debug] [2022-09-07T19:40:15.438Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-07T19:40:15.674Z] Serving at port 9005
+
+[debug] [2022-09-07T19:40:15.768Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"},"addAdminRole":{"platform":"gcfv1","labels":{},"callableTrigger":{},"entryPoint":"addAdminRole"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-07T19:40:15.773Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: helloWorld, addAdminRole. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld, addAdminRole."}}
+[debug] [2022-09-07T19:40:45.928Z] File C:\devFolder\React\capstone\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\devFolder\\React\\capstone\\functions\\index.js changed, reloading triggers"}}
