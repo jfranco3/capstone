@@ -6,9 +6,24 @@ import { auth } from "./firebaseConfig";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import { FoodPairContext } from "./Context/FoodPairProvider";
+import { functions } from "./firebaseConfig";
+import { httpsCallable } from "firebase/functions";
 
 export default function App(props) {
-  const { user, setUser } = useContext(FoodPairContext);
+  const { user, setUser, setBusinessData } = useContext(FoodPairContext);
+
+  const getYelpInfo = async () => {
+    const testYelpAPI = httpsCallable(functions, "testYelpAPI");
+    const result = await testYelpAPI();
+    // console.log("FETCHING YELP API", result.data.result);
+    const parsedResult = JSON.parse(result.data.result);
+    // console.log("PARSED RESULT", parsedResult);
+    setBusinessData(parsedResult);
+  };
+
+  useEffect(() => {
+    getYelpInfo();
+  }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -23,6 +38,8 @@ export default function App(props) {
     //  the database this cleans up and disconnects the
     //  observer function when component is unmounted.
   }, []);
+
+  // console.log("BUSINESS DATA", businessData);
 
   return (
     <BrowserRouter>

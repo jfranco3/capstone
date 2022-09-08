@@ -1,16 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { FoodPairContext } from "../Context/FoodPairProvider";
 import RestaurantCard from "./RestaurantCard";
-import { functions } from "../firebaseConfig";
-import { httpsCallable } from "firebase/functions";
-
-const getYelpInfo = async () => {
-  const testYelpAPI = httpsCallable(functions, "testYelpAPI");
-  const result = await testYelpAPI();
-  console.log("FETCHING YELP API", result);
-};
 
 function Vote() {
-  getYelpInfo();
+  const { businessData } = useContext(FoodPairContext);
+  console.log("BIZ DATA", businessData);
 
   return (
     //     <div>
