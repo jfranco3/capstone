@@ -1,16 +1,16 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
-// import { functions } from "./firebaseConfig";
-// import { httpsCallable } from "firebase/functions";
+import { functions } from "../firebaseConfig";
+import { httpsCallable } from "firebase/functions";
 
-//   const testYelpAPI = async () => {
-//     const testYelpAPI = httpsCallable(functions, "testYelpAPI");
-//     const result = await testYelpAPI();
-//     console.log("FETCHING YELP API", result);
-//   };
+const getYelpInfo = async () => {
+  const testYelpAPI = httpsCallable(functions, "testYelpAPI");
+  const result = await testYelpAPI();
+  console.log("FETCHING YELP API", result);
+};
 
 function Vote() {
-  // testYelpAPI();
+  getYelpInfo();
 
   return (
     //     <div>

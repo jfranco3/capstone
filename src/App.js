@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import NavBar from "./components/NavBar";
 import Router from "./Router";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebaseConfig";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
+import { FoodPairContext } from "./Context/FoodPairProvider";
 
 export default function App(props) {
-  const [user, setUser] = useState("");
+  const { user, setUser } = useContext(FoodPairContext);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -23,9 +25,9 @@ export default function App(props) {
   }, []);
 
   return (
-    <div>
+    <BrowserRouter>
       <NavBar user={user} />
       <Router user={user} setUser={setUser} />
-    </div>
+    </BrowserRouter>
   );
 }
