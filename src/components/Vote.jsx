@@ -11,7 +11,6 @@ function Vote() {
       {businessData.businesses.map((businesses) => (
         <RestaurantCard
           name={businesses.name}
-          categories={businesses.categories.title}
           image={businesses.image_url}
           phone={businesses.display_phone}
           price={businesses.price}

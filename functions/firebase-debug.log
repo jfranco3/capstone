@@ -816,3 +816,67 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] i  functions: Finished "testYelpAPI" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-testYelpAPI"},"extension":{},"message":"Finished \"testYelpAPI\" in ~1s"}}
 [debug] [2022-09-21T01:31:53.385Z] [worker-us-central1-testYelpAPI-d598f2f8-33f1-4024-85a3-95ff82263d04]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-testYelpAPI-d598f2f8-33f1-4024-85a3-95ff82263d04]: IDLE"}}
 [debug] [2022-09-21T01:31:53.385Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-21T19:48:02.741Z] ----------------------------------------------------------------------
+[debug] [2022-09-21T19:48:02.743Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jfran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-09-21T19:48:02.743Z] CLI Version:   11.8.0
+[debug] [2022-09-21T19:48:02.744Z] Platform:      win32
+[debug] [2022-09-21T19:48:02.744Z] Node Version:  v16.16.0
+[debug] [2022-09-21T19:48:02.747Z] Time:          Wed Sep 21 2022 14:48:02 GMT-0500 (Central Daylight Time)
+[debug] [2022-09-21T19:48:02.747Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-21T19:48:02.806Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-21T19:48:02.806Z] > authorizing via signed-in user (jfranco376@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-09-21T19:48:02.825Z] [hub] writing locator at C:\Users\jfran\AppData\Local\Temp\hub-capstone-cd3d1.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage, eventarc\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-09-21T19:48:02.861Z] defaultcredentials: writing to file C:\Users\jfran\AppData\Roaming\firebase\jfranco376_gmail_com_application_default_credentials.json
+[debug] [2022-09-21T19:48:02.862Z] Setting GAC to C:\Users\jfran\AppData\Roaming\firebase\jfranco376_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\jfran\\AppData\\Roaming\\firebase\\jfranco376_gmail_com_application_default_credentials.json"}}
+[debug] [2022-09-21T19:48:02.864Z] > refreshing access token with scopes: []
+[debug] [2022-09-21T19:48:02.866Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-09-21T19:48:02.866Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-09-21T19:48:03.072Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-09-21T19:48:03.072Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-09-21T19:48:03.108Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/capstone-cd3d1/adminSdkConfig [none]
+[debug] [2022-09-21T19:48:03.458Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/capstone-cd3d1/adminSdkConfig 200
+[debug] [2022-09-21T19:48:03.458Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/capstone-cd3d1/adminSdkConfig {"projectId":"capstone-cd3d1","storageBucket":"capstone-cd3d1.appspot.com","locationId":"us-central"}
+[debug] [2022-09-21T19:48:03.493Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-21T19:48:03.494Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-21T19:48:03.494Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\jfran\\.cache\\firebase\\emulators\\ui-v1.9.0\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\jfran\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.9.0\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-09-21T19:48:03.626Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "C:\devFolder\React\capstone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\devFolder\\React\\capstone\\functions\" for Cloud Functions..."}}
+[debug] [2022-09-21T19:48:03.773Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-09-21T19:48:05.898Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-21T19:48:05.899Z] Building nodejs source
+[debug] [2022-09-21T19:48:05.899Z] Analyzing nodejs backend spec
+[debug] [2022-09-21T19:48:05.900Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-21T19:48:06.203Z] Serving at port 9005
+

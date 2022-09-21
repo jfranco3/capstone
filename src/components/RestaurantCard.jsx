@@ -25,7 +25,7 @@ const ExpandMore = styled((props) => {
 
 //props rendered by Vote.jsx
 export default function RestaurantCard(props) {
-  const { name, image, phone, price, categories, review_count, rating } = props;
+  const { name, image, phone, price, review_count, rating } = props;
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -63,15 +63,11 @@ export default function RestaurantCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>
-            More Details here
-            {/* <p>
-              Price: {price}
-              Rating: {rating}
-              Review Count: {review_count}
-              Category: {categories}
-              Phone: {phone}
-            </p> */}
+          <Typography>
+            <p>Price: {price}</p>
+            <p>Rating: {rating}</p>
+            <p>Review Count: {review_count}</p>
+            <p>Phone: {phone}</p>
           </Typography>
         </CardContent>
       </Collapse>

@@ -8,7 +8,11 @@ export default function createSession() {
     <div>
       <h1>START A NEW SESSION</h1>
       <Stack spacing={4}>
-        <TextField required id="outlined-required" label="Where are you?" />
+        <TextField
+          required
+          id="outlined-required"
+          label="Where are you? Please enter zip code."
+        />
 
         <TextField
           required
@@ -19,7 +23,7 @@ export default function createSession() {
         <TextField
           required
           id="outlined-required"
-          label="Who's eating today?"
+          label="Who's eating today? Please enter emails."
         />
       </Stack>
       <Button variant="contained" color="primary">
