@@ -4,14 +4,23 @@ import RestaurantCard from "./RestaurantCard";
 
 function Vote() {
   const { businessData } = useContext(FoodPairContext);
-  console.log("BIZ DATA", businessData);
+  console.log("BIZ DATA", businessData.businesses);
 
   return (
-    //     <div>
-    //map through api to return pertinent info about each restaurant
-    <RestaurantCard />
-
-    //     </div>
+    <div>
+      {businessData.businesses.map((businesses) => (
+        <RestaurantCard
+          name={businesses.name}
+          categories={businesses.categories.title}
+          image={businesses.image_url}
+          phone={businesses.display_phone}
+          price={businesses.price}
+          rating={businesses.rating}
+          review_count={businesses.review_count}
+          bid={businesses.id}
+        />
+      ))}
+    </div>
   );
 }
 

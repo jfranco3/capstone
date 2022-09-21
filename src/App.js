@@ -4,12 +4,12 @@ import Router from "./Router";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 import { BrowserRouter } from "react-router-dom";
-import "./App.css";
 import { FoodPairContext } from "./Context/FoodPairProvider";
 import { functions } from "./firebaseConfig";
 import { httpsCallable } from "firebase/functions";
+import "./App.css";
 
-export default function App(props) {
+export default function App() {
   const { user, setUser, setBusinessData } = useContext(FoodPairContext);
 
   const getYelpInfo = async () => {

@@ -10,6 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import { Restaurant } from "@mui/icons-material";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -22,7 +23,10 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RestaurantCard() {
+//props rendered by Vote.jsx
+export default function RestaurantCard(props) {
+  const { name, image, phone, price, categories, review_count, rating } = props;
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -31,11 +35,11 @@ export default function RestaurantCard() {
 
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardHeader title="Here will display the name of each restaurant returning from Yelp API based on search parameters" />
+      <CardHeader title={name} />
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image={image}
         alt="Restaurant img"
       />
       <CardContent>
@@ -60,8 +64,14 @@ export default function RestaurantCard() {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-            ==== This is where Yelp API data for each restaurant will show up.
-            ====
+            More Details here
+            {/* <p>
+              Price: {price}
+              Rating: {rating}
+              Review Count: {review_count}
+              Category: {categories}
+              Phone: {phone}
+            </p> */}
           </Typography>
         </CardContent>
       </Collapse>

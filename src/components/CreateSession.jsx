@@ -9,16 +9,13 @@ export default function createSession() {
       <h1>START A NEW SESSION</h1>
       <Stack spacing={4}>
         <TextField required id="outlined-required" label="Where are you?" />
+
         <TextField
           required
           id="outlined-required"
           label="How far do you want to travel?"
         />
-        <TextField
-          required
-          id="outlined-required"
-          label="How many restaurant options?"
-        />
+        <TextField required id="outlined-required" label="Food Category?" />
         <TextField
           required
           id="outlined-required"
