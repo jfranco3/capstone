@@ -38,7 +38,7 @@ exports.addAdminRole = functions.https.onCall(async (data, context) => {
 exports.testYelpAPI = functions.https.onCall(async () => {
   try {
     var url =
-      "https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972";
+      "https://api.yelp.com/v3/businesses/search?&latitude=30.266666&longitude= -97.733330";
     var bearer =
       "Bearer " +
       "sPU_FE4tC6e41h7PLR7JSV7iozl2NWs1BvJ4X-kvd2rkY-7_CBu9_OW1oDpsAzZ0IikzpkPlqp2RY3ng3oAu7JubwDfrOunjC3_v20XYEg4IbtY2GitbdmzIdB8FY3Yx";

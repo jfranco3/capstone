@@ -25,7 +25,7 @@ const ExpandMore = styled((props) => {
 
 //props rendered by Vote.jsx
 export default function RestaurantCard(props) {
-  const { name, image, phone, price, review_count, rating } = props;
+  const { name, image, phone, price, categories, review_count, rating } = props;
 
   const [expanded, setExpanded] = React.useState(false);
 
