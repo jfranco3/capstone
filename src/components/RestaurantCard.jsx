@@ -9,8 +9,10 @@ import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-// import { Restaurant } from "@mui/icons-material";
+import { FoodPairContext } from "../Context/FoodPairProvider";
+import { useContext } from "react";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -25,10 +27,20 @@ const ExpandMore = styled((props) => {
 
 //props rendered by Vote.jsx
 export default function RestaurantCard(props) {
-  const { name, image, phone, price, categories, review_count, rating } = props;
+  const { likedRestaurants, setLikedRestaurants } = useContext(FoodPairContext);
+  const {
+    bid,
+    name,
+    image,
+    phone,
+    price,
+    review_count,
+    rating,
+    handleDelete,
+    handleAdd,
+  } = props;
 
   const [expanded, setExpanded] = React.useState(false);
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -50,7 +62,14 @@ export default function RestaurantCard(props) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          {likedRestaurants.includes(bid) ? (
+            <FavoriteIcon
+              style={{ color: "red" }}
+              onClick={() => handleDelete(bid)}
+            />
+          ) : (
+            <FavoriteBorderIcon onClick={() => handleAdd(bid)} />
+          )}
         </IconButton>
         <ExpandMore
           expand={expanded}

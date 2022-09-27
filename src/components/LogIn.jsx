@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Container } from "@mui/material";
 import { auth } from "../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { FoodPairContext } from "../Context/FoodPairProvider";
 
 const Login = () => {
+  const { setUser } = useContext(FoodPairContext);
   const navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -14,7 +16,7 @@ const Login = () => {
 
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
-        const user = userCredential.user;
+        setUser(userCredential.user);
         navigate("/createsession");
       })
       .catch((error) => {

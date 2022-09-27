@@ -2,15 +2,18 @@ import React, { useEffect, useState, useContext } from "react";
 import NavBar from "./components/NavBar";
 import Router from "./Router";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebaseConfig";
+import { auth, db } from "./firebaseConfig";
 import { BrowserRouter } from "react-router-dom";
 import { FoodPairContext } from "./Context/FoodPairProvider";
 import { functions } from "./firebaseConfig";
 import { httpsCallable } from "firebase/functions";
+import { collection, getDocs, query, where } from "firebase/firestore";
+
 import "./App.css";
 
 export default function App() {
-  const { user, setUser, setBusinessData } = useContext(FoodPairContext);
+  const { user, setUser, setBusinessData, setLikedRestaurants } =
+    useContext(FoodPairContext);
 
   const getYelpInfo = async () => {
     const testYelpAPI = httpsCallable(functions, "testYelpAPI");
@@ -38,6 +41,27 @@ export default function App() {
     //  the database this cleans up and disconnects the
     //  observer function when component is unmounted.
   }, []);
+
+  useEffect(() => {
+    const getLikedRestaurants = async () => {
+      try {
+        const likedRestaurantsRef = collection(
+          db,
+          "LikedRestaurantsCollection"
+        );
+        const q = query(likedRestaurantsRef, where("userId", "==", user.uid));
+        const queryResults = await getDocs(q);
+        queryResults.forEach((doc) =>
+          setLikedRestaurants(doc.data().likedRestaurantsIds)
+        );
+      } catch (error) {
+        console.error("ERROR GETTING LIKED CARS", error);
+      }
+    };
+    if (user?.uid != null) {
+      getLikedRestaurants();
+    }
+  }, [user]);
 
   // console.log("BUSINESS DATA", businessData);
 

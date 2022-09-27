@@ -49,7 +49,7 @@ exports.testYelpAPI = functions.https.onCall(async () => {
       },
     });
 
-    const response1 = "successs";
+    const response1 = "success";
 
     const response3 = JSON.stringify(yelpData.data);
     console.log(response3);
