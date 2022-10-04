@@ -8,7 +8,6 @@ import { FoodPairContext } from "./Context/FoodPairProvider";
 import { functions } from "./firebaseConfig";
 import { httpsCallable } from "firebase/functions";
 import { collection, getDocs, query, where } from "firebase/firestore";
-
 import "./App.css";
 
 export default function App() {
@@ -16,8 +15,16 @@ export default function App() {
     useContext(FoodPairContext);
 
   const getYelpInfo = async () => {
+    let input = {};
+    navigator.geolocation.getCurrentPosition(
+      (position) =>
+        (input = {
+          lat: position.coords.latitude,
+          long: position.coords.longitude,
+        })
+    );
     const testYelpAPI = httpsCallable(functions, "testYelpAPI");
-    const result = await testYelpAPI();
+    const result = await testYelpAPI(input);
     // console.log("FETCHING YELP API", result.data.result);
     const parsedResult = JSON.parse(result.data.result);
     // console.log("PARSED RESULT", parsedResult);
@@ -55,7 +62,7 @@ export default function App() {
           setLikedRestaurants(doc.data().likedRestaurantsIds)
         );
       } catch (error) {
-        console.error("ERROR GETTING LIKED CARS", error);
+        console.error("ERROR GETTING LIKED restaurants", error);
       }
     };
     if (user?.uid != null) {

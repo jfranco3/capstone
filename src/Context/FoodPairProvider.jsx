@@ -5,13 +5,14 @@ const FoodPairContext = createContext();
 // A "provider" is used to denote a component that passes its props
 // all the way down the component tree.
 function FoodPairProvider({ children }) {
-  //Class 8: For Firebase user authentication from onAuthStateChanged
   const [likedRestaurants, setLikedRestaurants] = useState([]);
-
   const [user, setUser] = useState("");
-
-  //Class 9: Create a useState hook to store the data we Read from Firestore
+  const [input, setInput] = useState("");
+  const [selector, setSelector] = useState("category");
   const [businessData, setBusinessData] = useState([]);
+  const [q, setQ] = useState("");
+  const [searchParam] = useState(["categories"]);
+  const [filterParam, setFilterParam] = useState(["All"]);
 
   const value = {
     likedRestaurants,
@@ -20,6 +21,15 @@ function FoodPairProvider({ children }) {
     setUser,
     businessData,
     setBusinessData,
+    input,
+    setInput,
+    selector,
+    setSelector,
+    q,
+    setQ,
+    searchParam,
+    filterParam,
+    setFilterParam,
   };
 
   return (

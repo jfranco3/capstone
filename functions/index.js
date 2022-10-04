@@ -35,10 +35,9 @@ exports.addAdminRole = functions.https.onCall(async (data, context) => {
   }
 });
 
-exports.testYelpAPI = functions.https.onCall(async () => {
+exports.testYelpAPI = functions.https.onCall(async (input) => {
   try {
-    var url =
-      "https://api.yelp.com/v3/businesses/search?&latitude=30.266666&longitude= -97.733330";
+    var url = `https://api.yelp.com/v3/businesses/search?&latitude=30.266666&longitude= -97.733330`;
     var bearer =
       "Bearer " +
       "sPU_FE4tC6e41h7PLR7JSV7iozl2NWs1BvJ4X-kvd2rkY-7_CBu9_OW1oDpsAzZ0IikzpkPlqp2RY3ng3oAu7JubwDfrOunjC3_v20XYEg4IbtY2GitbdmzIdB8FY3Yx";
@@ -48,8 +47,6 @@ exports.testYelpAPI = functions.https.onCall(async () => {
         Authorization: bearer,
       },
     });
-
-    const response1 = "success";
 
     const response3 = JSON.stringify(yelpData.data);
     console.log(response3);
