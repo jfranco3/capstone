@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { FoodPairContext } from "../Context/FoodPairProvider";
 
-function CreateSession() {
+function FilterSearch() {
   const {
     businessData,
     setBusinessData,
@@ -68,4 +68,4 @@ function CreateSession() {
 
 //SEND TO FIRST FN
 
-export default CreateSession;
+export default FilterSearch;

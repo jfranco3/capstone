@@ -13,6 +13,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FoodPairContext } from "../Context/FoodPairProvider";
 import { useContext } from "react";
+import Divider from "@mui/material/Divider";
+import Chip from "@mui/material/Chip";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -50,7 +52,7 @@ export default function RestaurantCard(props) {
       sx={{
         maxWidth: 345,
         display: "inline-block",
-        backgroundColor: "lightyellow",
+        backgroundColor: "white",
         marginLeft: 15,
         marginRight: 15,
         marginTop: 10,
@@ -94,10 +96,22 @@ export default function RestaurantCard(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography>
-            <p>Price: {price}</p>
-            <p>Rating: {rating}</p>
-            <p>Review Count: {review_count}</p>
-            <p>Phone: {phone}</p>
+            <Divider textAlign="left">
+              <Chip label="PRICE" />
+            </Divider>
+            <p> {price}</p>
+            <Divider textAlign="left">
+              <Chip label="RATING" />
+            </Divider>
+            <p> {rating}</p>
+            <Divider textAlign="left">
+              <Chip label="REVIEW COUNT" />
+            </Divider>
+            <p> {review_count}</p>
+            <Divider textAlign="left">
+              <Chip label="PHONE NUMBER" />
+            </Divider>
+            <p>{phone}</p>
           </Typography>
         </CardContent>
       </Collapse>

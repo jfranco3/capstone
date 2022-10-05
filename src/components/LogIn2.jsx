@@ -49,7 +49,7 @@ export default function LogIn() {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
         setUser(userCredential.user);
-        navigate("/createsession");
+        navigate("/");
       })
       .catch((error) => {
         console.error("ERROR LOGGING IN", error);

@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Routes, Route, Navigate } from "react-router";
 import Home from "./components/Home";
-import CreateSession from "./components/CreateSession";
 import Vote from "./components/Vote";
 // import Login from "./components/Login";
 // import SignUp from "./components/SignUp";
 import SignUp2 from "./components/SignUp2";
 import LogIn2 from "./components/LogIn2";
-import { FoodPairContext } from "./Context/FoodPairProvider";
+import FilterSearch from "./components/FilterSearch";
 
 //props rendered by App.js
 const ProtectedRoute = (props) => {
@@ -23,7 +22,10 @@ const Router = (props) => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<ProtectedRoute user={user} component={Home} />}
+        />
         <Route path="/login" element={<LogIn2 />} />
         <Route path="/signup" element={<SignUp2 />} />
         <Route
@@ -31,8 +33,8 @@ const Router = (props) => {
           element={<ProtectedRoute user={user} component={Vote} />}
         />
         <Route
-          path="/createsession"
-          element={<ProtectedRoute user={user} component={CreateSession} />}
+          path="/filtersearch"
+          element={<ProtectedRoute user={user} component={FilterSearch} />}
         />
       </Routes>
     </div>

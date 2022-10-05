@@ -1,11 +1,10 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import RestaurantCard from "./RestaurantCard";
 import Vote from "./Vote";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Home() {
   return (
     <div>
       {/* <Stack spacing={2}>
@@ -31,6 +30,7 @@ export default function Login() {
       </Stack> */}
 
       {/* create a search bar for filtering results based on user input */}
+
       <Vote />
     </div>
   );
