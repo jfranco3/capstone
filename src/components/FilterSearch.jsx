@@ -41,7 +41,7 @@ function FilterSearch() {
 
   return (
     <div>
-      <h1>START A NEW SESSION</h1>
+      <h1>Please search to filter your restaurant choices near you!</h1>
 
       <form onSubmit={handleSubmit}>
         <label for="category">Search food categories here </label>
