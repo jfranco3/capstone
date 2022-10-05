@@ -15,20 +15,22 @@ export default function App() {
     useContext(FoodPairContext);
 
   const getYelpInfo = async () => {
-    let input = {};
-    navigator.geolocation.getCurrentPosition(
-      (position) =>
-        (input = {
-          lat: position.coords.latitude,
-          long: position.coords.longitude,
-        })
-    );
-    const testYelpAPI = httpsCallable(functions, "testYelpAPI");
-    const result = await testYelpAPI(input);
-    // console.log("FETCHING YELP API", result.data.result);
-    const parsedResult = JSON.parse(result.data.result);
-    // console.log("PARSED RESULT", parsedResult);
-    setBusinessData(parsedResult);
+    console.log("HEY");
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      let input;
+      console.log("POSITION", position);
+      input = {
+        lat: position.coords.latitude,
+        long: position.coords.longitude,
+      };
+      console.log("INPUT", input);
+      const testYelpAPI = httpsCallable(functions, "testYelpAPI");
+      const result = await testYelpAPI({ input });
+      // console.log("FETCHING YELP API", result.data.result);
+      const parsedResult = JSON.parse(result.data.result);
+      // console.log("PARSED RESULT", parsedResult);
+      setBusinessData(parsedResult);
+    });
   };
 
   useEffect(() => {
@@ -70,7 +72,7 @@ export default function App() {
     }
   }, [user]);
 
-  // console.log("BUSINESS DATA", businessData);
+  console.log("HELLO");
 
   return (
     <BrowserRouter>

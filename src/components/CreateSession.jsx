@@ -13,11 +13,6 @@ function CreateSession() {
     setInput,
     selector,
     setSelector,
-    q,
-    setQ,
-    searchParam,
-    filterParam,
-    setFilterParam,
   } = useContext(FoodPairContext);
 
   const handleChange = (event) => {
@@ -30,7 +25,9 @@ function CreateSession() {
 
   const searchByCategory = () => {
     axios
-      .get(`https://api.yelp.com/v3/businesses/search?query=${input}`)
+      .get(
+        `https://api.yelp.com/v3/businesses/search?&latitude=30.266666&longitude= -97.733330`
+      )
       .then(() => {
         setBusinessData(businessData.businesses);
       });
@@ -48,7 +45,7 @@ function CreateSession() {
       <h1>START A NEW SESSION</h1>
 
       <form onSubmit={handleSubmit}>
-        <label for="category">What food category are you searching for? </label>
+        <label for="category">Search food categories here </label>
 
         <input
           id="category"

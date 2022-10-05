@@ -25,11 +25,6 @@ function FoodPairProvider({ children }) {
     setInput,
     selector,
     setSelector,
-    q,
-    setQ,
-    searchParam,
-    filterParam,
-    setFilterParam,
   };
 
   return (

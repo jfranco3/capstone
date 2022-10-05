@@ -1,6 +1,7 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Vote from "./Vote";
 import { Link } from "react-router-dom";
 
 export default function Login() {
@@ -30,6 +31,7 @@ export default function Login() {
           LOG IN
         </Button>
       </Stack>
+      <Vote />
     </div>
   );
 }
