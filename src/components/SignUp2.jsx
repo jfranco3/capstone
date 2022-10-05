@@ -16,24 +16,7 @@ import { auth, db } from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { createRole } from "../Utils/utilityFunctions";
 import { setDoc, doc } from "firebase/firestore";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Food-Pair
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Footer from "./Footer";
 
 const theme = createTheme();
 
@@ -157,8 +140,8 @@ export default function SignUp() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 }

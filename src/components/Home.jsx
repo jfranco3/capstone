@@ -2,6 +2,7 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Vote from "./Vote";
+import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
       {/* create a search bar for filtering results based on user input */}
 
       <Vote />
+      <Footer />
     </div>
   );
 }

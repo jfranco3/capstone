@@ -16,24 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { auth } from "../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FoodPairContext } from "../Context/FoodPairProvider";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Food-Pair
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Footer from "./Footer";
 
 const theme = createTheme();
 
@@ -146,11 +129,11 @@ export default function LogIn() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
         </Grid>
       </Grid>
+      <Footer />
     </ThemeProvider>
   );
 }
