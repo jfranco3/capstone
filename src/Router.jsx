@@ -28,10 +28,10 @@ const Router = (props) => {
         />
         <Route path="/login" element={<LogIn2 />} />
         <Route path="/signup" element={<SignUp2 />} />
-        <Route
+        {/* <Route
           path="/vote"
           element={<ProtectedRoute user={user} component={Vote} />}
-        />
+        /> */}
         <Route
           path="/filtersearch"
           element={<ProtectedRoute user={user} component={FilterSearch} />}

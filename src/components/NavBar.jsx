@@ -23,12 +23,13 @@ export default function NavBar() {
           <li className="nav-list-item">
             <Link to="/filtersearch">Filter Search</Link>
           </li>
+          {/* <li className="nav-list-item">
+            <Link to="/vote">Vote</Link> */}
+
           <li className="nav-list-item">
-            <Link to="/vote">Vote</Link>
-            <li className="nav-list-item">
-              <Link to="/signup">Sign Up</Link>
-            </li>
+            <Link to="/signup">Sign Up</Link>
           </li>
+          {/* </li> */}
           {auth.currentUser ? (
             <li
               className="nav-list-item"

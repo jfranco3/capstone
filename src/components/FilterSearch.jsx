@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+import Vote from "./Vote";
 import axios from "axios";
 import Footer from "./Footer";
 import { FoodPairContext } from "../Context/FoodPairProvider";
@@ -63,6 +61,7 @@ function FilterSearch() {
           <option value="30">within 30 miles</option>
         </select>
       </form>
+      <Vote />
       <Footer />
     </div>
   );
