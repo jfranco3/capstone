@@ -18,13 +18,13 @@ export default function NavBar() {
             <Link to="/">Home</Link>
           </li>
           <li className="nav-list-item">
-            <Link to="/signup">Sign Up</Link>
-          </li>
-          <li className="nav-list-item">
             <Link to="/createsession">Create Session</Link>
           </li>
           <li className="nav-list-item">
             <Link to="/vote">Vote</Link>
+            <li className="nav-list-item">
+              <Link to="/signup">Sign Up</Link>
+            </li>
           </li>
           {auth.currentUser ? (
             <li

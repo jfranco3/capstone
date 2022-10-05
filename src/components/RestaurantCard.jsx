@@ -46,7 +46,18 @@ export default function RestaurantCard(props) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        maxWidth: 345,
+        display: "inline-block",
+        backgroundColor: "lightyellow",
+        marginLeft: 15,
+        marginRight: 15,
+        marginTop: 10,
+        marginBottom: 10,
+        borderRadius: 5,
+      }}
+    >
       <CardHeader title={name} />
       <CardMedia
         component="img"

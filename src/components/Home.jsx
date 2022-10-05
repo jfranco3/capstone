@@ -1,16 +1,14 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import RestaurantCard from "./RestaurantCard";
 import Vote from "./Vote";
 import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}
-      className="textfield"
-    >
-      <Stack spacing={2}>
+    <div>
+      {/* <Stack spacing={2}>
         <Button
           component={Link}
           to="/signup"
@@ -30,7 +28,9 @@ export default function Login() {
         >
           LOG IN
         </Button>
-      </Stack>
+      </Stack> */}
+
+      {/* create a search bar for filtering results based on user input */}
       <Vote />
     </div>
   );
