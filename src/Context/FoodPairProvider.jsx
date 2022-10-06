@@ -13,6 +13,7 @@ function FoodPairProvider({ children }) {
   const [q, setQ] = useState("");
   const [searchParam] = useState(["categories"]);
   const [filterParam, setFilterParam] = useState(["All"]);
+  const [coordinates, setCoordinates] = useState({});
 
   const value = {
     likedRestaurants,
@@ -25,6 +26,8 @@ function FoodPairProvider({ children }) {
     setInput,
     selector,
     setSelector,
+    coordinates,
+    setCoordinates,
   };
 
   return (

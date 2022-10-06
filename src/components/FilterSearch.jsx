@@ -1,47 +1,53 @@
-import React, { useContext } from "react";
-import Vote from "./Vote";
+import React, { useContext, useState } from "react";
+import RestaurantList from "./RestaurantList";
 import axios from "axios";
 import Footer from "./Footer";
+import { functions } from "../firebaseConfig";
+import { httpsCallable } from "firebase/functions";
 import { FoodPairContext } from "../Context/FoodPairProvider";
 
 function FilterSearch() {
-  const {
-    businessData,
-    setBusinessData,
-    input,
-    setInput,
-    selector,
-    setSelector,
-  } = useContext(FoodPairContext);
+  const { businessData, setBusinessData, input, setInput, coordinates } =
+    useContext(FoodPairContext);
+
+  const [searchInput, setSearchInput] = useState("");
+  const [radius, setRadius] = useState();
+
+  const getUserYelpSearch = httpsCallable(functions, "getUserYelpSearch");
 
   const handleChange = (event) => {
-    setInput(event.target.value);
+    setSearchInput(event.target.value);
   };
 
   const handleSelect = (event) => {
-    setSelector(event.target.value);
+    setRadius(event.target.value);
   };
 
-  const searchByCategory = () => {
-    axios
-      .get(
-        `https://api.yelp.com/v3/businesses/search?&latitude=30.266666&longitude= -97.733330`
-      )
-      .then(() => {
-        setBusinessData(businessData.businesses);
+  const searchByCategory = async () => {
+    try {
+      const result = await getUserYelpSearch({
+        coordinates,
+        searchInput,
+        radius,
       });
+      const parsedResult = JSON.parse(result.data.result);
+      setBusinessData(parsedResult);
+    } catch (error) {
+      console.error("ERROR GETTING USER RESULTS", error);
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (selector === "category") {
-      searchByCategory();
-    }
+    // if (radius === "{}") {
+    searchByCategory();
+    // }
   };
+  console.log("radius", radius);
 
   return (
     <div>
-      <h1>Please search to filter your restaurant choices near you!</h1>
+      <h1>Filter restaurant choices near you!</h1>
 
       <form onSubmit={handleSubmit}>
         <label for="category">Search food categories here </label>
@@ -51,17 +57,18 @@ function FilterSearch() {
           placeholder="Search..."
           type="text"
           onChange={handleChange}
-          value={input}
+          value={searchInput}
         />
+        <button type="submit">Search</button>
 
         <label for="search-by">What distance do you want to travel?: </label>
         <select onChange={handleSelect} name="search-by" id="search-by">
-          <option value="10">within 10 miles</option>
-          <option value="20">within 20 miles</option>
-          <option value="30">within 30 miles</option>
+          <option value="16000">within 10 miles</option>
+          <option value="32000">within 20 miles</option>
+          <option value="48000">within 30 miles</option>
         </select>
       </form>
-      <Vote />
+      <RestaurantList />
       <Footer />
     </div>
   );

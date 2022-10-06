@@ -11,11 +11,16 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import "./App.css";
 
 export default function App() {
-  const { user, setUser, setBusinessData, setLikedRestaurants } =
-    useContext(FoodPairContext);
+  const {
+    user,
+    setUser,
+    setBusinessData,
+    setLikedRestaurants,
+    coordinates,
+    setCoordinates,
+  } = useContext(FoodPairContext);
 
   const getYelpInfo = async () => {
-    console.log("HEY");
     navigator.geolocation.getCurrentPosition(async (position) => {
       let input;
       console.log("POSITION", position);
@@ -23,7 +28,8 @@ export default function App() {
         lat: position.coords.latitude,
         long: position.coords.longitude,
       };
-      console.log("INPUT", input);
+      setCoordinates(input);
+      // console.log("INPUT", input);
       const testYelpAPI = httpsCallable(functions, "testYelpAPI");
       const result = await testYelpAPI({ input });
       // console.log("FETCHING YELP API", result.data.result);
@@ -39,7 +45,7 @@ export default function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("CURRENT USER", currentUser);
+      // console.log("CURRENT USER", currentUser);
       setUser(currentUser);
     });
 

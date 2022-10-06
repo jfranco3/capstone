@@ -50,9 +50,10 @@ export default function RestaurantCard(props) {
   return (
     <Card
       sx={{
-        maxWidth: 345,
+        maxWidth: 400,
+        maxHeight: 450,
         display: "inline-block",
-        backgroundColor: "white",
+        backgroundColor: "#485199",
         marginLeft: 15,
         marginRight: 15,
         marginTop: 10,
