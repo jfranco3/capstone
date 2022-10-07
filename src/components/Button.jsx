@@ -22,6 +22,7 @@ export const Button = ({
   return (
     <Link to="/login" className="btn-mobile">
       <button
+        style={{ color: "black" }}
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}
         type={type}

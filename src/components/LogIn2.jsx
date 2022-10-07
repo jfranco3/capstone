@@ -117,7 +117,7 @@ export default function LogIn() {
               <Button
                 type="submit"
                 fullWidth
-                // variant="contained"
+                variant="contained"
                 sx={{
                   mt: 3,
                   mb: 5,
@@ -133,7 +133,14 @@ export default function LogIn() {
                   Forgot password?
                 </Grid>
                 <Grid item>
-                  <button onClick={navigateSignup}>
+                  <button
+                    style={{
+                      backgroundColor: "rgb(4, 103, 120)",
+                      borderRadius: "5px",
+                      padding: "5px",
+                    }}
+                    onClick={navigateSignup}
+                  >
                     Don't have an account? Sign Up
                   </button>
                 </Grid>

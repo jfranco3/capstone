@@ -15,7 +15,7 @@ function ChatBubble() {
       <div
         style={{
           backgroundColor: "rgb(230,229,233)",
-          width: "50%",
+          width: "40%",
           borderRadius: "70px",
           color: "black",
           padding: "5px",
@@ -34,6 +34,7 @@ function ChatBubble() {
           color: "white",
           padding: "5px",
           marginLeft: "30%",
+          marginTop: "1%",
         }}
       >
         <h1>
@@ -44,6 +45,40 @@ function ChatBubble() {
           </span>
         </h1>
       </div>
+
+      <div
+        style={{
+          backgroundColor: "rgb(230,229,233)",
+          width: "35%",
+          borderRadius: "70px",
+          color: "black",
+          padding: "5px",
+          marginBottom: "10px",
+          marginLeft: "20%",
+          marginTop: "1%",
+        }}
+      >
+        <h1>OMG...Let's try Foodie App!!</h1>
+      </div>
+      <div
+        style={{
+          backgroundColor: "rgb(13,133,254)",
+          width: "42%",
+          borderRadius: "50px",
+          color: "white",
+          padding: "5px",
+          marginLeft: "38%",
+        }}
+      >
+        <h1>
+          {" "}
+          Oh yea! It can help us decide!
+          <span role="img" aria-label="sheep">
+            🐑🐑
+          </span>
+        </h1>
+      </div>
+
       <div
         style={{
           backgroundColor: "rgb(144,7,46, .8)",
@@ -51,27 +86,29 @@ function ChatBubble() {
           borderColor: "white",
           borderStyle: "groove",
           color: "white",
-          fontSize: "50px",
-          marginTop: "10px",
+          fontSize: "60px",
+          marginTop: "5px",
           marginLeft: "5%",
           marginRight: "5%",
+          marginBottom: "10%",
         }}
       >
         <p style={{ color: "white" }}>
-          <strong>We've all asked this. Let our app help you decide!</strong>
+          <strong>Start Searching Now!</strong>
         </p>
-        <div className="home-btns">
-          <Button
-            onClick={navigateLogin}
-            className="btns"
-            buttonStyle="btn--outline"
-            buttonSize="btn--large"
-          >
-            GET STARTED
-          </Button>
-        </div>
+        {/* <div className="home-btns"> */}
+        <Button
+          style={{ backgroundColor: "rgb(4,103,120)" }}
+          onClick={navigateLogin}
+          className="btns"
+          buttonStyle="btn--outline"
+          buttonSize="btn--large"
+        >
+          GET STARTED
+        </Button>
       </div>
     </div>
+    // </div>
   );
 }
 

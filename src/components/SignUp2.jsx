@@ -150,7 +150,14 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <button onClick={navigateLogin}>
+                <button
+                  style={{
+                    backgroundColor: "rgb(4, 103, 120)",
+                    borderRadius: "5px",
+                    padding: "5px",
+                  }}
+                  onClick={navigateLogin}
+                >
                   Already have an account? Log In
                 </button>
               </Grid>

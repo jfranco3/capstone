@@ -15,7 +15,7 @@ export default function NavBar() {
         <IconButton color="inherit"></IconButton>
 
         <Typography variant="h6" style={{ flexGrow: "1", textAlign: "left" }}>
-          FOODIE
+          FOODIE APP
         </Typography>
         <ul className="nav-list">
           <li className="nav-list-item">

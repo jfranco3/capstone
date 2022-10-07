@@ -75,6 +75,7 @@ function FilterSearch() {
           marginLeft: "15%",
           marginRight: "5%",
           width: "70%",
+          padding: "5px",
         }}
       >
         <form onSubmit={handleSubmit}>
@@ -122,7 +123,16 @@ function FilterSearch() {
           <option value="5">$$$$$</option>
         </select> */}
 
-          <button type="submit">Search Now</button>
+          <button
+            style={{
+              backgroundColor: "rgb(4,103,120)",
+              padding: "10px 10px",
+              borderRadius: "10px",
+            }}
+            type="submit"
+          >
+            Search Now
+          </button>
         </form>
       </div>
       <RestaurantList />
