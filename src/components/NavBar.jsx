@@ -7,14 +7,15 @@ import FastfoodIcon from "@mui/icons-material/Fastfood";
 
 export default function NavBar() {
   const navigate = useNavigate();
+
   return (
     <AppBar position="relative">
-      <Toolbar sx={{ bgcolor: "#99002f" }}>
+      <Toolbar sx={{ bgcolor: "black" }}>
         <FastfoodIcon />
         <IconButton color="inherit"></IconButton>
 
         <Typography variant="h6" style={{ flexGrow: "1", textAlign: "left" }}>
-          FOOD-PAIR
+          FOODIE
         </Typography>
         <ul className="nav-list">
           <li className="nav-list-item">

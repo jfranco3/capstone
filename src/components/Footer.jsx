@@ -9,7 +9,7 @@ export default function GuestFooter() {
         position: "fixed",
         bottom: 0,
 
-        bgcolor: "#99002f",
+        bgcolor: "black",
       }}
       component="footer"
       square

@@ -40,43 +40,76 @@ function FilterSearch() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // if (radius === "{}") {
+
     searchByCategory();
-    // }
   };
   console.log("radius", radius);
   // console.log("price", price);
 
   return (
-    <div>
-      <h1>Filter restaurant choices near you!</h1>
+    <>
+      <div
+        style={{
+          backgroundColor: "rgba(144,7,46, .8)",
+          borderRadius: "30px",
+          borderColor: "white",
+          borderStyle: "groove",
+          color: "white",
+          fontSize: "20px",
+          marginTop: "10px",
+          marginLeft: "5%",
+          marginRight: "5%",
+        }}
+      >
+        <h1>Easily filter restaurant choices near you!</h1>
+      </div>
+      <div
+        style={{
+          backgroundColor: "rgba(144,7,46, .8)",
+          borderRadius: "30px",
+          borderColor: "white",
+          borderStyle: "groove",
+          color: "white",
+          fontSize: "30px",
+          marginTop: "20px",
+          marginLeft: "15%",
+          marginRight: "5%",
+          width: "70%",
+        }}
+      >
+        <form onSubmit={handleSubmit}>
+          <label for="category">
+            Search a food category of your choice here:{" "}
+          </label>
 
-      <form onSubmit={handleSubmit}>
-        <label for="category">
-          Search a food category of your choice here:{" "}
-        </label>
+          <input
+            id="category"
+            placeholder="Search..."
+            type="text"
+            onChange={handleChange}
+            value={searchInput}
+          />
 
-        <input
-          id="category"
-          placeholder="Search..."
-          type="text"
-          onChange={handleChange}
-          value={searchInput}
-        />
+          <p>
+            <label for="search-by-radius">
+              How far do you want to travel?{" "}
+            </label>
+          </p>
 
-        <label for="search-by-radius">How far do you want to travel? </label>
-        <select
-          onChange={handleSelect}
-          name="search-by-radius"
-          id="search-by-radius"
-        >
-          <option value="8000">within 5 miles</option>
-          <option value="16000">within 10 miles</option>
-          <option value="32000">within 20 miles</option>
-          <option value="35000">More than 20 miles</option>
-        </select>
+          <p>
+            <select
+              onChange={handleSelect}
+              name="search-by-radius"
+              id="search-by-radius"
+            >
+              <option value="8000">within 5 miles</option>
+              <option value="16000">within 10 miles</option>
+              <option value="32000">within 20 miles</option>
+              <option value="35000">More than 20 miles</option>
+            </select>
+          </p>
 
-        {/* <label for="search-by-price">What's your price range today? </label>
+          {/* <label for="search-by-price">What's your price range today? </label>
         <select
           onChange={handleSelect}
           name="search-by-price"
@@ -89,11 +122,12 @@ function FilterSearch() {
           <option value="5">$$$$$</option>
         </select> */}
 
-        <button type="submit">Search Now</button>
-      </form>
+          <button type="submit">Search Now</button>
+        </form>
+      </div>
       <RestaurantList />
       <Footer />
-    </div>
+    </>
   );
 }
 

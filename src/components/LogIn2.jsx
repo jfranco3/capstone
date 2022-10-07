@@ -23,9 +23,13 @@ const theme = createTheme();
 
 export default function LogIn() {
   const { setUser } = useContext(FoodPairContext);
-  const navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const navigate = useNavigate();
+
+  const navigateSignup = () => {
+    navigate("/signup");
+  };
 
   const login = (e) => {
     e.preventDefault();
@@ -33,7 +37,7 @@ export default function LogIn() {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
         setUser(userCredential.user);
-        navigate("/");
+        navigate("/filtersearch");
       })
       .catch((error) => {
         console.error("ERROR LOGGING IN", error);
@@ -71,10 +75,10 @@ export default function LogIn() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "#99002f" }}>
+            <Avatar sx={{ m: 1, bgcolor: "rgba(144,7,46, .8)" }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h">
               Log In
             </Typography>
             <Box component="form" noValidate onSubmit={login} sx={{ mt: 1 }}>
@@ -113,21 +117,25 @@ export default function LogIn() {
               <Button
                 type="submit"
                 fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2, bgcolor: "#99002f" }}
+                // variant="contained"
+                sx={{
+                  mt: 3,
+                  mb: 5,
+                  bgcolor: "rgba(144,7,46, .8)",
+                  color: "white",
+                }}
               >
                 Log In
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
+                  {/* <Link href="#" variant="body2"> */}
+                  Forgot password?
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
+                  <button onClick={navigateSignup}>
+                    Don't have an account? Sign Up
+                  </button>
                 </Grid>
               </Grid>
             </Box>

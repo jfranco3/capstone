@@ -22,10 +22,7 @@ const Router = (props) => {
   return (
     <div>
       <Routes>
-        <Route
-          path="/"
-          element={<ProtectedRoute user={user} component={Home} />}
-        />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<LogIn2 />} />
         <Route path="/signup" element={<SignUp2 />} />
         {/* <Route

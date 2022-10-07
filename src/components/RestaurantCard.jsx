@@ -53,7 +53,7 @@ export default function RestaurantCard(props) {
         maxWidth: 450,
 
         display: "inline-block",
-        backgroundColor: "#06676e",
+        backgroundColor: "white",
         marginLeft: 15,
         marginRight: 15,
         marginTop: 10,

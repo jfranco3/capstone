@@ -21,7 +21,6 @@ import Footer from "./Footer";
 const theme = createTheme();
 
 export default function SignUp() {
-  const navigate = useNavigate();
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [userRole, setUserRole] = useState(null);
@@ -31,6 +30,11 @@ export default function SignUp() {
       userId: user.user.uid,
       likedRestaurantsIds: [],
     });
+  };
+
+  const navigate = useNavigate();
+  const navigateLogin = () => {
+    navigate("/login");
   };
 
   const signUp = async (e) => {
@@ -45,7 +49,7 @@ export default function SignUp() {
       createRole(userCredential, userRole);
       createLikedRestaurantsCollection(userCredential);
       console.log("userCredential.user:from SignUP.js", userCredential.user);
-      navigate("/");
+      navigate("/filtersearch");
     } catch (error) {
       console.log(error.message);
     }
@@ -53,7 +57,20 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container
+        component="main"
+        maxWidth="xs"
+        style={{
+          backgroundColor: "white",
+          borderRadius: "30px",
+          borderColor: "white",
+          borderStyle: "groove",
+          color: "white",
+          fontSize: "50px",
+          marginTop: "10px",
+          marginBottom: "10px",
+        }}
+      >
         <CssBaseline />
         <Box
           sx={{
@@ -63,10 +80,10 @@ export default function SignUp() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "#99002f" }}>
+          <Avatar sx={{ m: 1, bgcolor: "rgba(144,7,46, .8)" }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h4" sx={{ color: "black" }}>
             Sign up
           </Typography>
           <Box component="form" noValidate onSubmit={signUp} sx={{ mt: 3 }}>
@@ -127,15 +144,15 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, bgcolor: "#99002f" }}
+              sx={{ mt: 3, mb: 2, bgcolor: "rgba(144,7,46, .8)" }}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+                <button onClick={navigateLogin}>
+                  Already have an account? Log In
+                </button>
               </Grid>
             </Grid>
           </Box>
