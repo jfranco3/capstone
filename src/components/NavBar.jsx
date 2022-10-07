@@ -9,11 +9,11 @@ export default function NavBar() {
   const navigate = useNavigate();
   return (
     <AppBar position="relative">
-      <Toolbar sx={{ bgcolor: "#000" }}>
+      <Toolbar sx={{ bgcolor: "#99002f" }}>
         <FastfoodIcon />
         <IconButton color="inherit"></IconButton>
 
-        <Typography variant="h6" style={{ flexGrow: "1" }}>
+        <Typography variant="h6" style={{ flexGrow: "1", textAlign: "left" }}>
           FOOD-PAIR
         </Typography>
         <ul className="nav-list">

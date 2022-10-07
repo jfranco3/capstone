@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import RestaurantList from "./RestaurantList";
-import axios from "axios";
 import Footer from "./Footer";
 import { functions } from "../firebaseConfig";
 import { httpsCallable } from "firebase/functions";
@@ -12,6 +11,7 @@ function FilterSearch() {
 
   const [searchInput, setSearchInput] = useState("");
   const [radius, setRadius] = useState();
+  const [price, setPrice] = useState();
 
   const getUserYelpSearch = httpsCallable(functions, "getUserYelpSearch");
 
@@ -29,6 +29,7 @@ function FilterSearch() {
         coordinates,
         searchInput,
         radius,
+        price,
       });
       const parsedResult = JSON.parse(result.data.result);
       setBusinessData(parsedResult);
@@ -44,13 +45,16 @@ function FilterSearch() {
     // }
   };
   console.log("radius", radius);
+  // console.log("price", price);
 
   return (
     <div>
       <h1>Filter restaurant choices near you!</h1>
 
       <form onSubmit={handleSubmit}>
-        <label for="category">Search food categories here </label>
+        <label for="category">
+          Search a food category of your choice here:{" "}
+        </label>
 
         <input
           id="category"
@@ -59,14 +63,33 @@ function FilterSearch() {
           onChange={handleChange}
           value={searchInput}
         />
-        <button type="submit">Search</button>
 
-        <label for="search-by">What distance do you want to travel?: </label>
-        <select onChange={handleSelect} name="search-by" id="search-by">
+        <label for="search-by-radius">How far do you want to travel? </label>
+        <select
+          onChange={handleSelect}
+          name="search-by-radius"
+          id="search-by-radius"
+        >
+          <option value="8000">within 5 miles</option>
           <option value="16000">within 10 miles</option>
           <option value="32000">within 20 miles</option>
-          <option value="48000">within 30 miles</option>
+          <option value="35000">More than 20 miles</option>
         </select>
+
+        {/* <label for="search-by-price">What's your price range today? </label>
+        <select
+          onChange={handleSelect}
+          name="search-by-price"
+          id="search-by-price"
+        >
+          <option value="1">$</option>
+          <option value="2">$$</option>
+          <option value="3">$$$</option>
+          <option value="4">$$$$</option>
+          <option value="5">$$$$$</option>
+        </select> */}
+
+        <button type="submit">Search Now</button>
       </form>
       <RestaurantList />
       <Footer />

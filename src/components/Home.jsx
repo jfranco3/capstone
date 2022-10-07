@@ -1,37 +1,34 @@
 import React from "react";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+// import Stack from "@mui/material/Stack";
+import { Button } from "./Button";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
 
-export default function Home() {
+export function Home() {
   return (
-    <div>
-      {/* <Stack spacing={2}>
-        <Button
-          component={Link}
-          to="/signup"
-          className="signin-button"
-          variant="contained"
-          color="primary"
-        >
-          SIGN UP
-        </Button>
-        <strong>OR</strong>
-        <Button
-          component={Link}
-          to="/login"
-          className="login-button"
-          variant="contained"
-          color="primary"
-        >
-          LOG IN
-        </Button>
-      </Stack> */}
+    <>
+      <div className="home-container">
+        <video src="/Background-video-1" autoPlay loop muted />
+        <h1>
+          "Where do you want to eat, I dont know, Where do YOU want to eat?
+        </h1>
+        <p>
+          We all have asked this before. Let our app help decide! Click Here!
+        </p>
 
-      {/* create a search bar for filtering results based on user input */}
-
-      <Footer />
-    </div>
+        <div className="home-btns">
+          <Button
+            className="btns"
+            buttonStyle="btn--outline"
+            buttonSize="btn--large"
+          >
+            GET STARTED
+          </Button>
+        </div>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 }
+export default Home;

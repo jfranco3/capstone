@@ -29,7 +29,7 @@ const ExpandMore = styled((props) => {
 
 //props rendered by Vote.jsx
 export default function RestaurantCard(props) {
-  const { likedRestaurants, setLikedRestaurants } = useContext(FoodPairContext);
+  const { likedRestaurants } = useContext(FoodPairContext);
   const {
     bid,
     name,
@@ -50,10 +50,10 @@ export default function RestaurantCard(props) {
   return (
     <Card
       sx={{
-        maxWidth: 400,
-        maxHeight: 450,
+        maxWidth: 450,
+
         display: "inline-block",
-        backgroundColor: "#485199",
+        backgroundColor: "#06676e",
         marginLeft: 15,
         marginRight: 15,
         marginTop: 10,
@@ -70,8 +70,7 @@ export default function RestaurantCard(props) {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Expand for More Details About This Restaurant to Help You Pick Your
-          Favorite!
+          Expand for More Details About This Restaurant!
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
