@@ -10,8 +10,8 @@ function FilterSearch() {
     useContext(FoodPairContext);
 
   const [searchInput, setSearchInput] = useState("");
-  const [radius, setRadius] = useState(null);
-  const [price, setPrice] = useState(null);
+  const [radius, setRadius] = useState(8000);
+  const [price, setPrice] = useState(1);
 
   const getUserYelpSearch = httpsCallable(functions, "getUserYelpSearch");
 
