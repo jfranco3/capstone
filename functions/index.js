@@ -60,7 +60,7 @@ exports.testYelpAPI = functions.https.onCall(async (data) => {
 
 exports.getUserYelpSearch = functions.https.onCall(async (data) => {
   try {
-    var url = `https://api.yelp.com/v3/businesses/search?&latitude=${data.coordinates.lat}&longitude= ${data.coordinates.long}&term=${data.searchInput}&radius=${data.radius}`;
+    var url = `https://api.yelp.com/v3/businesses/search?&latitude=${data.coordinates.lat}&longitude= ${data.coordinates.long}&term=${data.searchInput}&radius=${data.radius}&price=${data.price}`;
     var bearer =
       "Bearer " +
       "sPU_FE4tC6e41h7PLR7JSV7iozl2NWs1BvJ4X-kvd2rkY-7_CBu9_OW1oDpsAzZ0IikzpkPlqp2RY3ng3oAu7JubwDfrOunjC3_v20XYEg4IbtY2GitbdmzIdB8FY3Yx";

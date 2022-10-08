@@ -10,8 +10,8 @@ function FilterSearch() {
     useContext(FoodPairContext);
 
   const [searchInput, setSearchInput] = useState("");
-  const [radius, setRadius] = useState();
-  const [price, setPrice] = useState();
+  const [radius, setRadius] = useState(null);
+  const [price, setPrice] = useState(null);
 
   const getUserYelpSearch = httpsCallable(functions, "getUserYelpSearch");
 
@@ -21,6 +21,10 @@ function FilterSearch() {
 
   const handleSelect = (event) => {
     setRadius(event.target.value);
+  };
+
+  const handleSelectPrice = (event) => {
+    setPrice(event.target.value);
   };
 
   const searchByCategory = async () => {
@@ -44,7 +48,7 @@ function FilterSearch() {
     searchByCategory();
   };
   console.log("radius", radius);
-  // console.log("price", price);
+  console.log("price", price);
 
   return (
     <>
@@ -106,22 +110,22 @@ function FilterSearch() {
               <option value="8000">within 5 miles</option>
               <option value="16000">within 10 miles</option>
               <option value="32000">within 20 miles</option>
-              <option value="35000">More than 20 miles</option>
+              {/* <option value="35000">More than 20 miles</option> */}
             </select>
           </p>
 
-          {/* <label for="search-by-price">What's your price range today? </label>
-        <select
-          onChange={handleSelect}
-          name="search-by-price"
-          id="search-by-price"
-        >
-          <option value="1">$</option>
-          <option value="2">$$</option>
-          <option value="3">$$$</option>
-          <option value="4">$$$$</option>
-          <option value="5">$$$$$</option>
-        </select> */}
+          <label for="search-by-price">What's your price range today? </label>
+          <select
+            onChange={handleSelectPrice}
+            name="search-by-price"
+            id="search-by-price"
+          >
+            <option value="1">$</option>
+            <option value="2">$$</option>
+            <option value="3">$$$</option>
+            <option value="4">$$$$</option>
+            <option value="5">$$$$$</option>
+          </select>
 
           <button
             style={{
@@ -140,7 +144,5 @@ function FilterSearch() {
     </>
   );
 }
-
-//SEND TO FIRST FN
 
 export default FilterSearch;

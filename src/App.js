@@ -78,7 +78,7 @@ export default function App() {
     }
   }, [user]);
 
-  console.log("HELLO");
+  // console.log("HELLO");
 
   return (
     <BrowserRouter>
