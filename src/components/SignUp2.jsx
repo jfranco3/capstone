@@ -51,7 +51,8 @@ export default function SignUp() {
       console.log("userCredential.user:from SignUP.js", userCredential.user);
       navigate("/filtersearch");
     } catch (error) {
-      console.log(error.message);
+      console.error("ERROR LOGGING IN", error);
+      alert("Invalid Email or Password. Please Try Again!");
     }
   };
 
