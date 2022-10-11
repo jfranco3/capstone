@@ -114,18 +114,20 @@ function FilterSearch() {
             </select>
           </p>
 
-          <label for="search-by-price">What's your price range today? </label>
-          <select
-            onChange={handleSelectPrice}
-            name="search-by-price"
-            id="search-by-price"
-          >
-            <option value="1">$</option>
-            <option value="2">$$</option>
-            <option value="3">$$$</option>
-            <option value="4">$$$$</option>
-            <option value="5">$$$$$</option>
-          </select>
+          <p>
+            <label for="search-by-price">What's your price range today? </label>
+            <select
+              onChange={handleSelectPrice}
+              name="search-by-price"
+              id="search-by-price"
+            >
+              <option value="1">$</option>
+              <option value="2">$$</option>
+              <option value="3">$$$</option>
+              <option value="4">$$$$</option>
+              <option value="5">$$$$$</option>
+            </select>
+          </p>
 
           <button
             style={{

@@ -3834,3 +3834,96 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2022-10-08T20:58:23.400Z] [worker-us-central1-testYelpAPI-8b30f89b-e422-4d32-ac54-6a6b1b1b8dcb]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-testYelpAPI-8b30f89b-e422-4d32-ac54-6a6b1b1b8dcb]: exited"}}
 [debug] [2022-10-08T20:58:23.400Z] [worker-us-central1-testYelpAPI-8b30f89b-e422-4d32-ac54-6a6b1b1b8dcb]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-testYelpAPI-8b30f89b-e422-4d32-ac54-6a6b1b1b8dcb]: FINISHED"}}
 [debug] [2022-10-08T20:58:23.402Z] Received signal SIGHUP 1
+[debug] [2022-10-11T17:32:46.836Z] ----------------------------------------------------------------------
+[debug] [2022-10-11T17:32:46.838Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jfran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-10-11T17:32:46.838Z] CLI Version:   11.8.0
+[debug] [2022-10-11T17:32:46.838Z] Platform:      win32
+[debug] [2022-10-11T17:32:46.839Z] Node Version:  v16.16.0
+[debug] [2022-10-11T17:32:46.839Z] Time:          Tue Oct 11 2022 11:32:46 GMT-0600 (Mountain Daylight Time)
+[debug] [2022-10-11T17:32:46.840Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-11T17:32:46.844Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-10-11T17:32:46.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-11T17:32:46.945Z] > authorizing via signed-in user (jfranco376@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project capstone-cd3d1. This may result in unexpected behavior. 
+[debug] [2022-10-11T17:32:46.977Z] [hub] writing locator at C:\Users\jfran\AppData\Local\Temp\hub-capstone-cd3d1.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage, eventarc\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-10-11T17:32:47.031Z] defaultcredentials: writing to file C:\Users\jfran\AppData\Roaming\firebase\jfranco376_gmail_com_application_default_credentials.json
+[debug] [2022-10-11T17:32:47.035Z] Setting GAC to C:\Users\jfran\AppData\Roaming\firebase\jfranco376_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\jfran\\AppData\\Roaming\\firebase\\jfranco376_gmail_com_application_default_credentials.json"}}
+[debug] [2022-10-11T17:32:47.037Z] > refreshing access token with scopes: []
+[debug] [2022-10-11T17:32:47.038Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-10-11T17:32:47.039Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-11T17:32:47.144Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-10-11T17:32:47.144Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-10-11T17:32:47.179Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-10-11T17:32:47.179Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-11T17:32:47.188Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/capstone-cd3d1/adminSdkConfig [none]
+[debug] [2022-10-11T17:32:47.434Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/capstone-cd3d1/adminSdkConfig 200
+[debug] [2022-10-11T17:32:47.434Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/capstone-cd3d1/adminSdkConfig {"projectId":"capstone-cd3d1","storageBucket":"capstone-cd3d1.appspot.com","locationId":"us-central"}
+[warn] !  ui: Emulator UI unable to start on port 4000, starting on 4003 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4003 instead."}}
+[debug] [2022-10-11T17:32:47.724Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-10-11T17:32:47.724Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-10-11T17:32:47.724Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\jfran\\.cache\\firebase\\emulators\\ui-v1.9.0\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\jfran\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.9.0\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-10-11T17:32:47.933Z] Web / API server started at localhost:4003
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4003\n"}}
+[info] i  functions: Watching "C:\devFolder\React\capstone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\devFolder\\React\\capstone\\functions\" for Cloud Functions..."}}
+[debug] [2022-10-11T17:32:48.007Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-10-11T17:32:50.738Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-10-11T17:32:50.739Z] Building nodejs source
+[debug] [2022-10-11T17:32:50.739Z] Analyzing nodejs backend spec
+[debug] [2022-10-11T17:32:50.741Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-10-11T17:32:51.121Z] Serving at port 9005
+
+[debug] [2022-10-11T17:32:51.259Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"},"addAdminRole":{"platform":"gcfv1","labels":{},"callableTrigger":{},"entryPoint":"addAdminRole"},"testYelpAPI":{"platform":"gcfv1","labels":{},"callableTrigger":{},"entryPoint":"testYelpAPI"},"getUserYelpSearch":{"platform":"gcfv1","labels":{},"callableTrigger":{},"entryPoint":"getUserYelpSearch"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-10-11T17:32:51.268Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: helloWorld, addAdminRole, testYelpAPI, getUserYelpSearch. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld, addAdminRole, testYelpAPI, getUserYelpSearch."}}
+[info] +  functions[us-central1-helloWorld]: http function initialized (http://localhost:5001/capstone-cd3d1/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/capstone-cd3d1/us-central1/helloWorld)."}}
+[info] +  functions[us-central1-addAdminRole]: http function initialized (http://localhost:5001/capstone-cd3d1/us-central1/addAdminRole). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/capstone-cd3d1/us-central1/addAdminRole)."}}
+[info] +  functions[us-central1-testYelpAPI]: http function initialized (http://localhost:5001/capstone-cd3d1/us-central1/testYelpAPI). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/capstone-cd3d1/us-central1/testYelpAPI)."}}
+[info] +  functions[us-central1-getUserYelpSearch]: http function initialized (http://localhost:5001/capstone-cd3d1/us-central1/getUserYelpSearch). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/capstone-cd3d1/us-central1/getUserYelpSearch)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4003                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4003/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
