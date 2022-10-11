@@ -6,8 +6,7 @@ import { httpsCallable } from "firebase/functions";
 import { FoodPairContext } from "../Context/FoodPairProvider";
 
 function FilterSearch() {
-  const { businessData, setBusinessData, input, setInput, coordinates } =
-    useContext(FoodPairContext);
+  const { setBusinessData, coordinates } = useContext(FoodPairContext);
 
   const [searchInput, setSearchInput] = useState("");
   const [radius, setRadius] = useState(8000);

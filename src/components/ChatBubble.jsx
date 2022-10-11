@@ -1,4 +1,3 @@
-import { fontSize } from "@mui/system";
 import * as React from "react";
 import { useNavigate } from "react-router";
 import { Button } from "./Button";
@@ -96,7 +95,7 @@ function ChatBubble() {
         <p style={{ color: "white" }}>
           <strong>Start Searching Now!</strong>
         </p>
-        {/* <div className="home-btns"> */}
+
         <Button
           style={{ backgroundColor: "rgb(4,103,120)" }}
           onClick={navigateLogin}

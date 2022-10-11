@@ -6,7 +6,6 @@ export function Home() {
   return (
     <>
       <div className="home-container">
-        {/* <video src="/Background-video-1" autoPlay loop muted /> */}
         <ChatBubble />
       </div>
       <div>
