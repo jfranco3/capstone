@@ -1,9 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router";
 import Home from "./components/Home";
-import RestaurantList from "./components/RestaurantList";
-// import Login from "./components/Login";
-// import SignUp from "./components/SignUp";
 import SignUp2 from "./components/SignUp2";
 import LogIn2 from "./components/LogIn2";
 import FilterSearch from "./components/FilterSearch";

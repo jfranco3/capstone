@@ -46,110 +46,117 @@ export default function LogIn() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
-        <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: `url(` + loginBackground2 + `)`,
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
+    <div>
+      <ThemeProvider theme={theme}>
+        <Grid container component="main" sx={{ height: "100vh" }}>
+          <CssBaseline />
+          <Grid
+            item
+            xs={false}
+            sm={4}
+            md={7}
             sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              backgroundImage: `url(` + loginBackground2 + `)`,
+              backgroundRepeat: "no-repeat",
+              backgroundColor: (t) =>
+                t.palette.mode === "light"
+                  ? t.palette.grey[50]
+                  : t.palette.grey[900],
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
+          />
+          <Grid
+            item
+            xs={12}
+            sm={8}
+            md={5}
+            component={Paper}
+            elevation={6}
+            square
           >
-            <Avatar sx={{ m: 1, bgcolor: "rgba(144,7,46, .8)" }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h">
-              Log In
-            </Typography>
-            <Box component="form" noValidate onSubmit={login} sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                onChange={(event) => {
-                  setLoginEmail(event.target.value);
-                }}
-                value={loginEmail}
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                onChange={(event) => {
-                  setLoginPassword(event.target.value);
-                }}
-                value={loginPassword}
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{
-                  mt: 3,
-                  mb: 5,
-                  bgcolor: "rgba(144,7,46, .8)",
-                  color: "white",
-                }}
-              >
+            <Box
+              sx={{
+                my: 8,
+                mx: 4,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Avatar sx={{ m: 1, bgcolor: "rgba(144,7,46, .8)" }}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h">
                 Log In
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  {/* <Link href="#" variant="body2"> */}
-                  Forgot password?
+              </Typography>
+              <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={login}>
+                <TextField
+                  margin="normal"
+                  required
+                  onChange={(event) => setLoginEmail(event.target.value)}
+                  value={loginEmail}
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                  autoFocus
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  onChange={(event) => setLoginPassword(event.target.value)}
+                  value={loginPassword}
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+                <FormControlLabel
+                  control={<Checkbox value="remember" color="primary" />}
+                  label="Remember me"
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{
+                    mt: 3,
+                    mb: 5,
+                    bgcolor: "rgba(144,7,46, .8)",
+                    color: "white",
+                  }}
+                >
+                  Log In
+                </Button>
+
+                <Grid container>
+                  <Grid item xs>
+                    {/* <Link href="#" variant="body2"> */}
+                    Forgot password?
+                  </Grid>
+                  <Grid item>
+                    <button
+                      style={{
+                        backgroundColor: "rgb(4, 103, 120)",
+                        borderRadius: "5px",
+                        padding: "5px",
+                      }}
+                      onClick={navigateSignup}
+                    >
+                      Don't have an account? Sign Up
+                    </button>
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <button
-                    style={{
-                      backgroundColor: "rgb(4, 103, 120)",
-                      borderRadius: "5px",
-                      padding: "5px",
-                    }}
-                    onClick={navigateSignup}
-                  >
-                    Don't have an account? Sign Up
-                  </button>
-                </Grid>
-              </Grid>
+              </Box>
             </Box>
-          </Box>
+          </Grid>
         </Grid>
-      </Grid>
-      <Footer />
-    </ThemeProvider>
+        <Footer />
+      </ThemeProvider>
+    </div>
   );
 }
