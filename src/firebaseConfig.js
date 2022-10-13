@@ -22,4 +22,4 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 // const analytics = getAnalytics(app);
 export const functions = getFunctions(app);
-// connectFunctionsEmulator(functions, "localhost", 5001);
+connectFunctionsEmulator(functions, "localhost", 5001);
