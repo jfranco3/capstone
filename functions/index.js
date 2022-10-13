@@ -1,6 +1,5 @@
 const functions = require("firebase-functions");
 const axios = require("axios").default;
-
 const admin = require("firebase-admin");
 admin.initializeApp();
 

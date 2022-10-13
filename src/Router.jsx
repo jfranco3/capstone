@@ -15,7 +15,7 @@ const ProtectedRoute = (props) => {
 
 const Router = (props) => {
   const { user } = props;
-  console.log("USER", user);
+  // console.log("USER", user);
   return (
     <div>
       <Routes>
